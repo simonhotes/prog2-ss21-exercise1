@@ -9,9 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test
-    @DisplayName("List size below 0")
+    @DisplayName("List size below 1")
     void checkListSize_below_0() {
-        assertFalse(App.checkListSize(-1));
+        assertFalse(App.checkListSize(0));
     }
 
     @Test
@@ -23,7 +23,7 @@ class AppTest {
     @Test
     @DisplayName("List size higher 60")
     void checkListSize_higher_60() {
-        assertFalse(App.checkListSize(-1));
+        assertFalse(App.checkListSize(65));
     }
 
     @Test
@@ -36,6 +36,18 @@ class AppTest {
     @DisplayName("Grade to round. Grade equals 38")
     void gradeRoundable_grade_equals_38() {
         assertTrue(App.gradeRoundable(38));
+    }
+
+    @Test
+    @DisplayName("Grade to round. Grade equals 99")
+    void gradeRoundable_grade_equals_99() {
+        assertTrue(App.gradeRoundable(99));
+    }
+
+    @Test
+    @DisplayName("Grade not to round. Grade equals 100")
+    void gradeRoundable_grade_equals_100() {
+        assertFalse(App.gradeRoundable(100));
     }
 
     @Test
@@ -83,5 +95,4 @@ class AppTest {
         List<Integer> actual = App.finalGrades(grades);
         assertEquals(expected, actual, "Test Failed");
     }
-
 }
