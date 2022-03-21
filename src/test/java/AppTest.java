@@ -83,4 +83,5 @@ class AppTest {
         List<Integer> actual = App.finalGrades(grades);
         assertEquals(expected, actual, "Test Failed");
     }
+
 }
